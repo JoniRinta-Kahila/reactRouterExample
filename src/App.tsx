@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './app.module.scss';
+import MainRouter from './components/router/mainRouter';
+import Sidebar from './components/sidebar/sidebar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type AppProps = {
+
 }
 
-export default App;
+const App: React.FC<AppProps> = () => {
+  const myName = 'ASD';
+  return (
+    <div>
+      <div className={styles.wrapper}>
+        <div className={styles.content}>
+          <MainRouter />
+        </div>
+      </div>
+      <div className={styles.sidebar}>
+        <Sidebar name={myName} />
+      </div>
+    </div>
+  )
+}
+
+export default App
+
